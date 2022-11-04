@@ -12,8 +12,9 @@ import "./App.css";
 
 const App = () => {
   const [password, setPassword] = useState("");
+  const [isError, setIsError] = useState(false);
   const [alertVisible, setAlertVisible] = useState(false);
-  const [characterLength, setCharacterLength] = useState(0);
+  const [characterLength, setCharacterLength] = useState(MIN);
   const [options, setOptions] = useState({
     upperCaseLetter: false,
     lowerCaseLetter: false,
@@ -41,6 +42,16 @@ const App = () => {
   };
 
   const generatePassword = () => {
+    if (
+      options.lowerCaseLetter === false &&
+      options.number === false &&
+      options.symbol === false &&
+      options.upperCaseLetter === false
+    ) {
+      setIsError(true);
+      return;
+    }
+
     let characters = "";
     let generatedPassword = "";
     let passwordLength = characterLength;
@@ -75,6 +86,7 @@ const App = () => {
       let randomIndex = Math.floor(Math.random() * characters.length);
       generatedPassword += characters[randomIndex];
     }
+    setIsError(false);
     setPassword(generatedPassword);
   };
 
@@ -112,6 +124,9 @@ const App = () => {
       </div>
       <div className="wrapper">
         <h1 className="app-title">Password Generator</h1>
+        {isError && (
+          <p className="error">You should select at least one option!</p>
+        )}
         <div className="password-container">
           <p
             className={`password-text ${

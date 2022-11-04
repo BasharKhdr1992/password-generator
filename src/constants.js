@@ -1,5 +1,5 @@
-export const MIN = 0;
-export const MAX = 20;
+export const MIN = 8;
+export const MAX = 24;
 export const lowerCaseLetters = "abcdefghijklmnopqrstuvwxyz";
 export const upperCaseLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 export const numbers = "0123456789";
