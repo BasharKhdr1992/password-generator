@@ -33,9 +33,11 @@ const App = () => {
     }
   };
   const copyPassword = () => {
-    if (password.length > 0) navigator.clipboard.writeText(password);
-    setAlertVisible(true);
-    setInterval(() => setAlertVisible(false), 2000);
+    if (password.length > 0) {
+      navigator.clipboard.writeText(password);
+      setAlertVisible(true);
+      setTimeout(() => setAlertVisible(false), 2500);
+    }
   };
 
   const generatePassword = () => {

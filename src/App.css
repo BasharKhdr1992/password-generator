@@ -37,8 +37,13 @@
 }
 
 @media only screen and (max-width: 900px) {
-  .wrapper {
+  .wrapper,
+  .alert {
     width: 90%;
+  }
+
+  .alert {
+    left: 5%;
   }
 }
 
