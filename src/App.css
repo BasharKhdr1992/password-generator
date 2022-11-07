@@ -48,17 +48,6 @@
   font-size: 1.2rem;
 }
 
-@media only screen and (max-width: 900px) {
-  .wrapper,
-  .alert {
-    width: 90%;
-  }
-
-  .alert {
-    left: 5%;
-  }
-}
-
 .app-title {
   text-align: center;
   margin-bottom: 1rem;
@@ -239,4 +228,19 @@ input[type="checkbox"] {
   margin-right: 0.65rem;
   font-size: 1.2rem;
   font-weight: 700;
+}
+
+@media only screen and (max-width: 900px) {
+  .wrapper,
+  .alert {
+    width: 90%;
+  }
+
+  .alert {
+    left: 5%;
+  }
+
+  .checkbox-title {
+    font-size: 1.1rem;
+  }
 }
