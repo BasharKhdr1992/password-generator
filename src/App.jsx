@@ -9,6 +9,7 @@ import {
   checkboxData,
 } from "./constants";
 import "./App.css";
+import Checkbox from "./components/Checkbox";
 
 const App = () => {
   const [password, setPassword] = useState("");
@@ -160,11 +161,7 @@ const App = () => {
           {checkboxData.map((option, index) => {
             return (
               <div className="checkbox-container" key={index}>
-                <input
-                  onChange={handleOnChange}
-                  type={"checkbox"}
-                  name={option.name}
-                />
+                <Checkbox onChange={handleOnChange} name={option.name} />
                 <p className="checkbox-title">{option.title}</p>
               </div>
             );
